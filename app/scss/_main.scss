@@ -1,0 +1,154 @@
+.main {
+  width: min-content;
+  height: min-content;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  
+
+  background: $veryDarkBlueCard;
+  border-radius: 15px;
+
+  box-shadow: 0px 6px 34px 1px rgba(0, 0, 0, 0.2);
+
+  &__img {
+    width: 302px;
+    height: 302px;
+    position: relative;
+
+    margin: 24px;
+    margin-bottom: 20px;
+
+    
+    
+
+    > a {
+      display: block;
+      width: 302px;
+      height: 302px;
+
+      > img {
+        width: 302px;
+        height: 302px;
+        border-radius: 8px;
+      }
+    } 
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+
+      &::before {
+        opacity: 0.5;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background: url("/images/icon-view.svg");
+      width: 48px;
+      height: 48px;
+      top: 127px;
+      left: 127px;
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition: opacity 250ms ease-in-out;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      background: $cyan;
+      width: 302px;
+      height: 302px;
+      border-radius: 8px;
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition: opacity 250ms ease-in-out;
+    }
+  }
+
+  &__h {
+    margin: 0 24px;
+    font-size: $font-l;
+    font-weight: 600;
+  }
+
+  &__p {
+    margin: 20px 24px;
+    font-size: $font-m;
+  }
+
+  &__data {
+    margin: 20px 24px;
+    font-size: $font-sm;
+
+    &__eth {
+      color: $cyan;
+      margin-left: 18px;
+      position: relative;
+      font-weight: 600;
+    }
+
+    &__eth::before {
+      content: "";
+      background: url("/images/icon-ethereum.svg");
+      width: 11px;
+      height: 18px;
+      display: block;
+      position: absolute;
+      left: -18px;
+      bottom: 2.5px;
+    }
+
+    &__time {
+      position: relative;
+    }
+
+    &__time::before {
+      content: "";
+      background: url("/images/icon-clock.svg");
+      width: 17px;
+      height: 17px;
+      display: block;
+      position: absolute;
+      left: -24px;
+      bottom: 3.5px;
+    }
+  }
+
+  &__line {
+    display: block;
+    height: 1px;
+    margin: 0 24px;
+    background: $veryDarkBlueLine;
+  }
+
+  &__creator {
+    margin: 16px 24px 24px 24px;
+    font-size: $font-sm;
+
+    > img {
+      width: 33px;
+      height: 33px;
+
+      border: 1px solid $white;
+      border-radius: 17px;
+    }
+
+    > span {
+      margin-left: 16px;
+    }
+  }
+}
